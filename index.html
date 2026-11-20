@@ -3,231 +3,622 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EVLAN Foods — Pure Essence, Crafted by Nature</title>
-  <meta name="description" content="Minimal, pure, artisan food products sustainably harvested and crafted to perfection.">
+  <title>EVLAN Bar Pro — Engineered Protein. Pure Performance.</title>
+  <meta name="description" content="21g cold-filtered grass-fed whey isolate, 0g added sugar, single-origin cacao. The Apple of protein bars.">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
-<body>
+<body data-finish="obsidian">
 
-  <!-- Navigation -->
-  <header class="nav-container">
-    <nav class="nav">
-      <div class="nav-brand">
-        <a href="#" class="logo">EVLAN<span>FOODS</span></a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#hero">Overview</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#standards">Purity</a></li>
-        <li><a href="#about">Story</a></li>
+  <!-- Top Global Bar -->
+  <header class="global-nav">
+    <div class="nav-inner">
+      <a href="#" class="global-brand">
+        <svg class="brand-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
+        </svg>
+        <span>EVLAN</span>
+      </a>
+      <ul class="global-menu">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#flavors">Flavors</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#specs">Specs</a></li>
       </ul>
-      <div class="nav-actions">
-        <a href="#products" class="btn-primary-sm">Shop Now</a>
+      <div class="global-actions">
+        <button class="cart-trigger" onclick="openBag()" aria-label="Open Shopping Bag">
+          <svg class="bag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="bag-badge" id="bagCount">0</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
+
+  <!-- Sticky Apple Sub-Navigation -->
+  <nav class="sub-nav">
+    <div class="sub-nav-inner">
+      <div class="sub-nav-title">
+        <a href="#overview">EVLAN Bar Pro</a>
+      </div>
+      <div class="sub-nav-links">
+        <a href="#overview" class="sub-link active">Overview</a>
+        <a href="#architecture" class="sub-link">Architecture</a>
+        <a href="#flavors" class="sub-link">Flavors</a>
+        <a href="#compare" class="sub-link">Compare</a>
+        <a href="#specs" class="sub-link">Nutrition</a>
+        <button class="btn-apple-sm" onclick="openBuyModal()">Order</button>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="container hero-content">
-        <p class="hero-badge">Next-Generation Organics by Akash</p>
-        <h1 class="hero-title">Pure taste.<br><span class="gradient-text">Engineered by Nature.</span></h1>
-        <p class="hero-subtitle">Single-origin, cold-extracted artisan essentials. Zero compromise on flavor, nutrient density, or sustainability.</p>
-        
-        <div class="hero-cta-group">
-          <a href="#products" class="btn-primary">Explore Collection</a>
-          <a href="#standards" class="btn-secondary">The Purity Standard <span class="arrow">&rarr;</span></a>
-        </div>
+    <section id="overview" class="hero-section">
+      <div class="hero-glow" id="heroGlow"></div>
+      
+      <div class="hero-container">
+        <div class="hero-header">
+          <span class="pill-eyebrow">EVLAN BAR PRO</span>
+          <h1 class="hero-headline">
+            Pro protein.<br>
+            <span class="hero-gradient">Zero compromises.</span>
+          </h1>
+          <p class="hero-subtext">
+            21g cold-microfiltered grass-fed whey isolate. 0g added sugar. Single-origin Ecuadorian dark cacao and organic almond butter truffle core. Precision-engineered for peak physical and cognitive performance.
+          </p>
 
-        <div class="hero-device-wrapper">
-          <div class="product-spotlight-card">
-            <div class="spotlight-image-placeholder">
-              <div class="glow-orb"></div>
-              <div class="spotlight-badge">Harvest 2026 • Limited Reserve</div>
-              <div class="food-icon-large">🫒</div>
-              <h3 class="spotlight-name">Reserve Cold-Pressed Extra Virgin Olive Oil</h3>
-              <p class="spotlight-origin">Peloponnese, Greece &bull; 0.18% Acidity</p>
-            </div>
+          <div class="hero-cta-group">
+            <button class="btn-apple-primary" onclick="openBuyModal()">Order Now &bull; $38 / Box</button>
+            <button class="btn-apple-link" onclick="openNutritionModal()">
+              View Nutrition Facts <span class="chevron">&rsaquo;</span>
+            </button>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Key Metrics / Specs (Apple style stats) -->
-    <section class="stats-section">
-      <div class="container stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Certified Organic</div>
-          <div class="stat-desc">Zero synthetic pesticides, fertilizers, or additives.</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">&lt; 4 hrs</div>
-          <div class="stat-label">Harvest-to-Press</div>
-          <div class="stat-desc">Locks in optimal polyphenol count and aroma.</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">0.0g</div>
-          <div class="stat-label">Refined Sugar</div>
-          <div class="stat-desc">Pure unadulterated whole-food goodness.</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">Net Zero</div>
-          <div class="stat-label">Carbon Footprint</div>
-          <div class="stat-desc">Regenerative agriculture and biodegradable packaging.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bento Grid Product Showcase -->
-    <section id="products" class="bento-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">The Collection</p>
-          <h2 class="section-title">Designed for the purist palate.</h2>
-        </div>
-
-        <div class="bento-grid">
-          <!-- Card 1: Wild Alpine Honey (Large) -->
-          <div class="bento-card bento-span-2 card-honey">
-            <div class="card-content">
-              <span class="card-tag">Raw &bull; Unfiltered</span>
-              <h3 class="card-title">Wild Alpine Flora Honey</h3>
-              <p class="card-desc">Sourced from high-altitude Swiss wildflowers. Cold-extracted to retain active bee enzymes and pollen nutrients.</p>
-              <div class="card-bottom">
-                <span class="card-price">$28</span>
-                <button class="btn-buy" onclick="addToCart('Wild Alpine Flora Honey')">Order Now</button>
-              </div>
-            </div>
-            <div class="card-visual">
-              <span class="bento-icon">🍯</span>
-            </div>
-          </div>
-
-          <!-- Card 2: Ceremonial Matcha -->
-          <div class="bento-card card-matcha">
-            <div class="card-content">
-              <span class="card-tag">Uji, Japan</span>
-              <h3 class="card-title">Single-Estate Ceremonial Matcha</h3>
-              <p class="card-desc">First harvest, stone-ground tencha leaves for serene focus.</p>
-              <div class="card-bottom">
-                <span class="card-price">$34</span>
-                <button class="btn-buy" onclick="addToCart('Ceremonial Matcha')">Order Now</button>
-              </div>
-            </div>
-            <div class="card-visual">
-              <span class="bento-icon">🍵</span>
-            </div>
-          </div>
-
-          <!-- Card 3: Ancient Grains -->
-          <div class="bento-card card-grains">
-            <div class="card-content">
-              <span class="card-tag">Heritage Sourdough Flour</span>
-              <h3 class="card-title">Ancient Einkorn Grain</h3>
-              <p class="card-desc">Low gluten index, unmatched nutty taste, stone-milled weekly.</p>
-              <div class="card-bottom">
-                <span class="card-price">$18</span>
-                <button class="btn-buy" onclick="addToCart('Ancient Einkorn Grain')">Order Now</button>
-              </div>
-            </div>
-            <div class="card-visual">
-              <span class="bento-icon">🌾</span>
-            </div>
-          </div>
-
-          <!-- Card 4: Micro-batch Salt (Large) -->
-          <div class="bento-card bento-span-2 card-salt">
-            <div class="card-content">
-              <span class="card-tag">Brittany, France</span>
-              <h3 class="card-title">Solar-Evaporated Flake Salt</h3>
-              <p class="card-desc">Harvested by master paludiers using wooden tools. Naturally rich in magnesium and essential marine minerals.</p>
-              <div class="card-bottom">
-                <span class="card-price">$16</span>
-                <button class="btn-buy" onclick="addToCart('Solar-Evaporated Salt')">Order Now</button>
-              </div>
-            </div>
-            <div class="card-visual">
-              <span class="bento-icon">🧂</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Purity / Standards Section -->
-    <section id="standards" class="standards-section">
-      <div class="container">
-        <div class="standards-box">
-          <div class="standards-text">
-            <p class="eyebrow">The Standard</p>
-            <h2 class="standards-title">No compromises. Ever.</h2>
-            <p class="standards-subtitle">Just like precision engineering, our cultivation and harvesting process leaves no detail unmeasured.</p>
+        <!-- Interactive 3D Protein Bar Showcase -->
+        <div class="hero-showcase">
+          <div class="bar-stage" id="barStage">
             
-            <ul class="standards-list">
-              <li>
-                <span class="check-icon">&#10003;</span>
-                <div>
-                  <strong>Third-Party Lab Tested</strong>
-                  <p>Every single batch is tested for heavy metals, microplastics, and purity.</p>
+            <!-- Floating Macro Tags -->
+            <div class="macro-callout tag-top-left">
+              <span class="macro-value">21g</span>
+              <span class="macro-desc">Bio-Available Protein</span>
+            </div>
+
+            <div class="macro-callout tag-top-right">
+              <span class="macro-value">0.0g</span>
+              <span class="macro-desc">Added Sugar</span>
+            </div>
+
+            <div class="macro-callout tag-bottom-left">
+              <span class="macro-value">1g</span>
+              <span class="macro-desc">Net Impact Carb</span>
+            </div>
+
+            <div class="macro-callout tag-bottom-right">
+              <span class="macro-value">190</span>
+              <span class="macro-desc">Clean Calories</span>
+            </div>
+
+            <!-- The Bar Component -->
+            <div class="bar-mockup" id="barMockup">
+              <!-- Premium Wrapper with Foil Texture -->
+              <div class="wrapper-shell">
+                <div class="wrapper-brand">
+                  <span class="brand-tag">EVLAN &bull; FORMULATION 2026</span>
+                  <h3 class="wrapper-title" id="wrapperTitle">OBSIDIAN COCOA</h3>
+                  <span class="wrapper-subtitle" id="wrapperSub">72% Dark Cacao Truffle &bull; 21g Protein</span>
                 </div>
-              </li>
-              <li>
-                <span class="check-icon">&#10003;</span>
-                <div>
-                  <strong>Ultra-Low Oxidation Bottling</strong>
-                  <p>Bottled under nitrogen flush in ultraviolet-blocking dark glass bottles.</p>
+                <div class="foil-cutout">
+                  <div class="foil-glimmer"></div>
                 </div>
-              </li>
-              <li>
-                <span class="check-icon">&#10003;</span>
-                <div>
-                  <strong>Direct Farmer Fair-Trade</strong>
-                  <p>We work directly with multigenerational independent organic growers.</p>
+              </div>
+
+              <!-- Exposed Bar Interior Cross-Section -->
+              <div class="bar-exposed">
+                <div class="bar-layer layer-chocolate-top">
+                  <span class="layer-crumb"></span>
+                  <span class="layer-crumb"></span>
                 </div>
-              </li>
-            </ul>
+                <div class="bar-layer layer-crisp-matrix">
+                  <div class="crisp-dot"></div>
+                  <div class="crisp-dot"></div>
+                  <div class="crisp-dot"></div>
+                </div>
+                <div class="bar-layer layer-dough-core"></div>
+                <div class="bar-layer layer-chocolate-base"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Finish Switcher -->
+          <div class="finish-selector-wrapper">
+            <p class="finish-label">Selected Finish: <strong id="finishName">Obsidian Cocoa</strong></p>
+            <div class="finish-swatches">
+              <button class="swatch-btn active" data-finish="obsidian" onclick="setFinish('obsidian')" aria-label="Obsidian Cocoa">
+                <span class="swatch swatch-obsidian"></span>
+              </button>
+              <button class="swatch-btn" data-finish="titanium" onclick="setFinish('titanium')" aria-label="Natural Titanium Salted Caramel">
+                <span class="swatch swatch-titanium"></span>
+              </button>
+              <button class="swatch-btn" data-finish="glacial" onclick="setFinish('glacial')" aria-label="Glacial Alpine Vanilla">
+                <span class="swatch swatch-glacial"></span>
+              </button>
+              <button class="swatch-btn" data-finish="berry" onclick="setFinish('berry')" aria-label="Cosmic Berry Acai">
+                <span class="swatch swatch-berry"></span>
+              </button>
+              <button class="swatch-btn" data-finish="matcha" onclick="setFinish('matcha')" aria-label="Ceremonial Kyoto Matcha">
+                <span class="swatch swatch-matcha"></span>
+              </button>
+            </div>
+            <p class="finish-meta" id="finishNotes">Single-origin 72% dark cacao with sea salt crystals and cold-whipped isolate.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Apple "By the Numbers" Section -->
+    <section class="metrics-section">
+      <div class="container">
+        <p class="eyebrow-center">UNRIVALED NUTRITIONAL DENSITY</p>
+        <h2 class="section-heading-lg">Engineered to outclass every bar in existence.</h2>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-big">21g</span>
+            <h4 class="metric-title">Cold-Microfiltered Isolate</h4>
+            <p class="metric-text">Processed below 4°C to preserve native protein structure, immunoglobulins, and complete BCAA bioavailability.</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-big">0.0g</span>
+            <h4 class="metric-title">Added Sugars &amp; Sugar Alcohols</h4>
+            <p class="metric-text">Zero erythritol, zero maltitol, zero artificial sweeteners. No blood sugar spike and no GI distress.</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-big">10g</span>
+            <h4 class="metric-title">Soluble Prebiotic Fiber</h4>
+            <p class="metric-text">Derived from organic blue agave and chicory root to nourish your microbiome while slowing absorption.</p>
+          </div>
+          <div class="metric-card">
+            <span class="metric-big">100%</span>
+            <h4 class="metric-title">Clean Label Verification</h4>
+            <p class="metric-text">Zero seed oils, zero soy fillers, zero palm fats. Triple-tested by independent certified labs.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Quick CTA banner -->
-    <section class="newsletter-section">
+    <!-- "Inside the Architecture" Section (Apple Silicon exploded view) -->
+    <section id="architecture" class="arch-section">
+      <div class="container">
+        <div class="arch-header">
+          <span class="pill-eyebrow">INTERNAL ARCHITECTURE</span>
+          <h2 class="section-heading-lg">Four layers of edible innovation.</h2>
+          <p class="section-lead">We deconstructed the protein bar from molecular physics to sensory texture. No chewy tire rubber. No powdery aftertaste.</p>
+        </div>
+
+        <div class="arch-visual-container">
+          <div class="arch-layers-stack">
+            
+            <!-- Layer 1 -->
+            <div class="arch-layer-card" data-layer="1">
+              <div class="layer-number">01</div>
+              <div class="layer-info">
+                <h3>Single-Origin Ecuadorian Cacao Enrobing</h3>
+                <p>72% dark chocolate tempered with Maldon sea salt crystals. Snap-crisp exterior that melts at body temperature without sticky palm fats.</p>
+              </div>
+              <div class="layer-spec-pill">Single-Origin Arriba Nacional</div>
+            </div>
+
+            <!-- Layer 2 -->
+            <div class="arch-layer-card" data-layer="2">
+              <div class="layer-number">02</div>
+              <div class="layer-info">
+                <h3>Whipped Almond Truffle Dough</h3>
+                <p>Stone-ground Valencia almonds folded into cold-filtered whey isolate. Delivers a dense, velvety nougat texture reminiscent of high-end confectionery.</p>
+              </div>
+              <div class="layer-spec-pill">Slow-Whipped Texture</div>
+            </div>
+
+            <!-- Layer 3 -->
+            <div class="arch-layer-card" data-layer="3">
+              <div class="layer-number">03</div>
+              <div class="layer-info">
+                <h3>Acoustic Crunch Matrix</h3>
+                <p>Puffed whey isolate crisps and roasted organic pumpkin seeds engineered to deliver 42 decibels of satisfying auditory crunch on every bite.</p>
+              </div>
+              <div class="layer-spec-pill">High-Protein Puffs</div>
+            </div>
+
+            <!-- Layer 4 -->
+            <div class="arch-layer-card" data-layer="4">
+              <div class="layer-number">04</div>
+              <div class="layer-info">
+                <h3>Adaptogenic Prebiotic Foundation</h3>
+                <p>Infused with 500mg organic dual-extracted Lion’s Mane mushroom extract for clean, jitter-free cognitive focus and microbiome nourishment.</p>
+              </div>
+              <div class="layer-spec-pill">500mg Lion's Mane</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Flavors Showcase -->
+    <section id="flavors" class="bento-section">
+      <div class="container">
+        <div class="section-top-row">
+          <div>
+            <span class="pill-eyebrow">THE COLLECTION</span>
+            <h2 class="section-heading-lg">Select your fuel.</h2>
+          </div>
+          <button class="btn-apple-secondary" onclick="openBuyModal('variety')">Get the Variety Box &rarr;</button>
+        </div>
+
+        <div class="bento-flavors-grid">
+          
+          <!-- Card 1: Obsidian Cocoa (Large Span) -->
+          <div class="bento-card span-2 flavor-obsidian">
+            <div class="bento-content">
+              <span class="bento-tag">Flagship Reserve</span>
+              <h3 class="bento-title">Obsidian Dark Cocoa</h3>
+              <p class="bento-desc">Rich single-origin Ecuadorian dark cacao with coarse sea salt crystals and a buttery almond core.</p>
+              <div class="bento-macros">
+                <span>21g Protein</span> &bull; <span>0g Sugar</span> &bull; <span>1g Net Carb</span> &bull; <span>190 kcal</span>
+              </div>
+              <div class="bento-cta-row">
+                <span class="bento-price">$38 <small>/ Box of 12</small></span>
+                <button class="btn-bento-buy" onclick="quickAdd('Obsidian Dark Cocoa', 38)">Add to Bag</button>
+              </div>
+            </div>
+            <div class="bento-graphic">
+              <div class="bar-miniature mini-obsidian"></div>
+            </div>
+          </div>
+
+          <!-- Card 2: Titanium Salted Caramel -->
+          <div class="bento-card flavor-titanium">
+            <div class="bento-content">
+              <span class="bento-tag">Gourmet Edition</span>
+              <h3 class="bento-title">Salted Caramel Crunch</h3>
+              <p class="bento-desc">Slow-caramelized organic lucuma fruit, Madagascar vanilla, and roasted almond crisp.</p>
+              <div class="bento-macros">
+                <span>21g Protein</span> &bull; <span>0g Sugar</span> &bull; <span>195 kcal</span>
+              </div>
+              <div class="bento-cta-row">
+                <span class="bento-price">$38 <small>/ Box of 12</small></span>
+                <button class="btn-bento-buy" onclick="quickAdd('Salted Caramel Crunch', 38)">Add to Bag</button>
+              </div>
+            </div>
+            <div class="bento-graphic">
+              <div class="bar-miniature mini-titanium"></div>
+            </div>
+          </div>
+
+          <!-- Card 3: Glacial Vanilla -->
+          <div class="bento-card flavor-glacial">
+            <div class="bento-content">
+              <span class="bento-tag">Pure Crisp</span>
+              <h3 class="bento-title">Glacial Alpine Vanilla</h3>
+              <p class="bento-desc">Bourbon vanilla bean folded into white cacao crisps and cold-milled cashew butter.</p>
+              <div class="bento-macros">
+                <span>21g Protein</span> &bull; <span>0g Sugar</span> &bull; <span>185 kcal</span>
+              </div>
+              <div class="bento-cta-row">
+                <span class="bento-price">$38 <small>/ Box of 12</small></span>
+                <button class="btn-bento-buy" onclick="quickAdd('Glacial Alpine Vanilla', 38)">Add to Bag</button>
+              </div>
+            </div>
+            <div class="bento-graphic">
+              <div class="bar-miniature mini-glacial"></div>
+            </div>
+          </div>
+
+          <!-- Card 4: Cosmic Berry Acai (Large Span) -->
+          <div class="bento-card span-2 flavor-berry">
+            <div class="bento-content">
+              <span class="bento-tag">Antioxidant Complex</span>
+              <h3 class="bento-title">Cosmic Berry &bull; Acai Crisp</h3>
+              <p class="bento-desc">Wild freeze-dried Scandinavian bilberries and Amazonian acai enrobed in dark cacao with prebiotic chia crunch.</p>
+              <div class="bento-macros">
+                <span>20g Protein</span> &bull; <span>0g Sugar</span> &bull; <span>190 kcal</span>
+              </div>
+              <div class="bento-cta-row">
+                <span class="bento-price">$38 <small>/ Box of 12</small></span>
+                <button class="btn-bento-buy" onclick="quickAdd('Cosmic Berry Acai', 38)">Add to Bag</button>
+              </div>
+            </div>
+            <div class="bento-graphic">
+              <div class="bar-miniature mini-berry"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Apple Comparison Table -->
+    <section id="compare" class="compare-section">
+      <div class="container">
+        <div class="compare-header">
+          <span class="pill-eyebrow">HEAD-TO-HEAD SPECIFICATIONS</span>
+          <h2 class="section-heading-lg">See how EVLAN Bar Pro compares.</h2>
+        </div>
+
+        <div class="compare-table-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th class="spec-col">Feature / Metric</th>
+                <th class="highlight-col">
+                  <div class="table-brand-badge">EVLAN Bar Pro</div>
+                  <span class="badge-sub">The Gold Standard</span>
+                </th>
+                <th>Standard Gym Protein Bar</th>
+                <th>Commercial "Healthy" Snack Bar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="spec-name">Primary Protein Source</td>
+                <td class="highlight-cell"><strong class="green-text">100% Cold-Microfiltered Whey Isolate</strong></td>
+                <td>Cheap Whey Concentrate &amp; Soy</td>
+                <td>Soy Crisp &amp; Peanut Flour</td>
+              </tr>
+              <tr>
+                <td class="spec-name">Added Sugar</td>
+                <td class="highlight-cell"><strong class="green-text">0.0g (Pure Whole Food)</strong></td>
+                <td>12g – 18g Corn Syrup</td>
+                <td>16g – 24g Cane Sugar</td>
+              </tr>
+              <tr>
+                <td class="spec-name">Sugar Alcohols (Maltitol / Erythritol)</td>
+                <td class="highlight-cell"><strong class="green-text">0.0g (Zero Bloating)</strong></td>
+                <td>14g (Severe Gastric Upset)</td>
+                <td>8g – 12g</td>
+              </tr>
+              <tr>
+                <td class="spec-name">Seed Oils &amp; Palm Oil</td>
+                <td class="highlight-cell"><strong class="green-text">0.0g (Zero Seed Oils)</strong></td>
+                <td>Palm Kernel Oil, Canola Oil</td>
+                <td>Vegetable Oil Blend</td>
+              </tr>
+              <tr>
+                <td class="spec-name">Nootropic &amp; Adaptogenic Matrix</td>
+                <td class="highlight-cell"><strong class="green-text">500mg Organic Lion’s Mane</strong></td>
+                <td>None</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td class="spec-name">Texture Profile</td>
+                <td class="highlight-cell"><strong>Velvety Nougat + 42dB Crunch</strong></td>
+                <td>Dry, Chalky, Rubber Tire Chew</td>
+                <td>Sticky, Syrupy Clump</td>
+              </tr>
+              <tr>
+                <td class="spec-name">Independent Batch Testing</td>
+                <td class="highlight-cell"><strong class="green-text">100% Tested (QR on box)</strong></td>
+                <td>Rarely Disclosed</td>
+                <td>Not Tested</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Tech Specs Drawer / Section -->
+    <section id="specs" class="specs-section">
+      <div class="container specs-card">
+        <div class="specs-grid">
+          <div class="specs-intro">
+            <span class="pill-eyebrow">FORMULA SPECIFICATIONS</span>
+            <h3 class="specs-title">Nutritional transparency. Down to the milligram.</h3>
+            <p class="specs-sub">Every ingredient has a biological purpose. Every batch is certified free of heavy metals, pesticides, and banned substances.</p>
+            <button class="btn-apple-primary" onclick="openNutritionModal()">Launch Interactive Nutrition Panel</button>
+          </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-key">Amino Acid Score (DIAAS)</span>
+              <span class="spec-val">1.28 (Exceeds WHO Standards)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-key">Branched-Chain Amino Acids (BCAAs)</span>
+              <span class="spec-val">5.4g per serving</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-key">L-Leucine (Muscle Protein Synthesis)</span>
+              <span class="spec-val">2.6g bio-available</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-key">Glycemic Load (GL)</span>
+              <span class="spec-val">&lt; 1 (Flatline insulin response)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-key">Packaging</span>
+              <span class="spec-val">100% Recyclable high-barrier mono-foil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Purchase Banner -->
+    <section class="order-banner">
       <div class="container text-center">
-        <h2 class="newsletter-title">Taste the difference tomorrow.</h2>
-        <p class="newsletter-subtitle">Subscribe to seasonal reserve announcements and receive complimentary express delivery on your first order.</p>
-        <form class="newsletter-form" onsubmit="handleSubscribe(event)">
-          <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="email">
-          <button type="submit" class="btn-primary">Join Reserve</button>
-        </form>
-        <p id="formMsg" class="form-feedback"></p>
+        <span class="pill-eyebrow">ORDER TODAY</span>
+        <h2 class="banner-title">Upgrade your daily fuel.</h2>
+        <p class="banner-sub">Free 2-day express shipping on orders over $50. 100% taste satisfaction guarantee.</p>
+        <div class="banner-actions">
+          <button class="btn-apple-primary btn-large" onclick="openBuyModal()">Order EVLAN Bar Pro</button>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Apple Minimalist Footer -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-top">
-        <p class="footer-note">1. Batch results and certificates of analysis are publicly accessible via QR codes printed on all bottle bases.</p>
+    <div class="container">
+      <div class="footer-footnotes">
+        <p>1. 21g protein based on cold-microfiltered whey protein isolate with complete amino acid bioavailability.</p>
+        <p>2. Zero added sugar refers to no cane sugar, corn syrup, or honey added during production. Contains naturally occurring sugars from organic almonds.</p>
+        <p>3. Lion's Mane mushroom extract is certified organic and standardized for bioactive hericenones and erinacines.</p>
       </div>
       <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <div class="footer-copyright">
-          &copy; 2026 EVLAN Foods Inc. All rights reserved.
+        <div class="footer-copy">
+          Copyright &copy; 2026 EVLAN Foods Inc. All rights reserved.
         </div>
         <div class="footer-links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Sales Policy</a>
-          <a href="#">Legal</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Lab Reports</a>
+          <a href="#">Certificates of Analysis</a>
+          <a href="#">Support</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Slide-Over Shopping Bag Drawer -->
+  <div class="bag-drawer-backdrop" id="bagBackdrop" onclick="closeBag()"></div>
+  <aside class="bag-drawer" id="bagDrawer">
+    <div class="drawer-header">
+      <h3>Your Bag (<span id="drawerBagCount">0</span>)</h3>
+      <button class="drawer-close" onclick="closeBag()">&times;</button>
+    </div>
+    <div class="drawer-body" id="bagItems">
+      <div class="empty-bag-msg">Your bag is empty. Choose your flavor above.</div>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal</span>
+        <strong id="drawerSubtotal">$0.00</strong>
+      </div>
+      <p class="shipping-note">Free express shipping included</p>
+      <button class="btn-apple-primary btn-checkout" onclick="handleCheckout()">
+        <svg class="apple-pay-glyph" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.98.6-2.62 1.35-.57.65-1.06 1.72-.93 2.74 1 .08 2.01-.5 2.62-1.24z"/>
+        </svg>
+        Check Out with Apple Pay
+      </button>
+    </div>
+  </aside>
+
+  <!-- Interactive Nutrition Modal -->
+  <div class="modal-backdrop" id="nutritionModal" onclick="closeNutritionModal(event)">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Nutrition &amp; Bioavailability Profile</h3>
+        <button class="modal-close" onclick="closeNutritionModal()">&times;</button>
+      </div>
+      <div class="nutrition-label-apple">
+        <div class="nl-title">Nutrition Facts</div>
+        <div class="nl-servings">Serving size: 1 Bar (60g)</div>
+        <div class="nl-bar-thick"></div>
+        <div class="nl-cal-row">
+          <span>Amount per serving<br><strong>Calories</strong></span>
+          <span class="cal-number">190</span>
+        </div>
+        <div class="nl-bar-med"></div>
+        <div class="nl-row bold"><span>Total Fat 7g</span><span>9%</span></div>
+        <div class="nl-row indent"><span>Saturated Fat 1.5g</span><span>8%</span></div>
+        <div class="nl-row indent"><span>Trans Fat 0g</span><span>0%</span></div>
+        <div class="nl-row bold"><span>Cholesterol 5mg</span><span>2%</span></div>
+        <div class="nl-row bold"><span>Sodium 125mg</span><span>5%</span></div>
+        <div class="nl-row bold"><span>Total Carbohydrate 12g</span><span>4%</span></div>
+        <div class="nl-row indent"><span>Dietary Fiber 10g</span><span>36%</span></div>
+        <div class="nl-row indent"><span>Total Sugars 1g</span><span></span></div>
+        <div class="nl-row indent"><span>Includes 0g Added Sugars</span><span>0%</span></div>
+        <div class="nl-row bold highlight"><span>Protein 21g</span><span>42%</span></div>
+        <div class="nl-bar-thick"></div>
+        <div class="amino-title">Complete Amino Acid Matrix (per bar):</div>
+        <div class="amino-grid">
+          <div><span>BCAAs:</span> <strong>5,400mg</strong></div>
+          <div><span>L-Leucine:</span> <strong>2,600mg</strong></div>
+          <div><span>L-Isoleucine:</span> <strong>1,400mg</strong></div>
+          <div><span>L-Valine:</span> <strong>1,400mg</strong></div>
+          <div><span>L-Glutamine:</span> <strong>3,800mg</strong></div>
+          <div><span>Lion's Mane:</span> <strong>500mg</strong></div>
+        </div>
+        <p class="clean-ingredients"><strong>Ingredients:</strong> Cold-microfiltered grass-fed whey protein isolate, organic Valencia almond butter, single-origin dark cocoa (72%), organic tapioca prebiotic fiber, chicory root fiber, organic puffed whey crisps, Maldon flake sea salt, organic Lion’s Mane mushroom dual-extract, monk fruit extract, natural Madagascar vanilla.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buy Customizer Modal -->
+  <div class="modal-backdrop" id="buyModal" onclick="closeBuyModal(event)">
+    <div class="modal-card buy-modal-card">
+      <div class="modal-head">
+        <h3>Configure Your EVLAN Bar Pro</h3>
+        <button class="modal-close" onclick="closeBuyModal()">&times;</button>
+      </div>
+      <div class="buy-modal-body">
+        
+        <div class="config-step">
+          <label class="step-label">1. Choose Flavor</label>
+          <div class="flavor-chips" id="modalFlavorChips">
+            <button class="chip active" onclick="selectModalFlavor('Obsidian Dark Cocoa', this)">Obsidian Cocoa</button>
+            <button class="chip" onclick="selectModalFlavor('Salted Caramel Crunch', this)">Salted Caramel</button>
+            <button class="chip" onclick="selectModalFlavor('Glacial Alpine Vanilla', this)">Alpine Vanilla</button>
+            <button class="chip" onclick="selectModalFlavor('Cosmic Berry Acai', this)">Cosmic Berry</button>
+            <button class="chip" onclick="selectModalFlavor('Variety Pack (All 4 Flavors)', this)">Variety Pack</button>
+          </div>
+        </div>
+
+        <div class="config-step">
+          <label class="step-label">2. Select Quantity</label>
+          <div class="size-options">
+            <div class="size-card active" onclick="selectModalSize(12, 38, this)">
+              <div class="size-name">12 Bars</div>
+              <div class="size-price">$38</div>
+              <div class="size-desc">$3.16 / bar</div>
+            </div>
+            <div class="size-card" onclick="selectModalSize(24, 68, this)">
+              <div class="size-badge">Best Value &bull; Save 10%</div>
+              <div class="size-name">24 Bars</div>
+              <div class="size-price">$68</div>
+              <div class="size-desc">$2.83 / bar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-step">
+          <label class="step-label">3. Frequency</label>
+          <div class="sub-toggle-container">
+            <label class="radio-card active">
+              <input type="radio" name="orderType" value="once" checked onchange="toggleSubscription(false)">
+              <div>
+                <strong>One-time purchase</strong>
+                <span>Single box delivery</span>
+              </div>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="orderType" value="sub" onchange="toggleSubscription(true)">
+              <div>
+                <strong>Subscribe &amp; Save 15%</strong>
+                <span>Auto-delivered every 30 days &bull; Cancel anytime</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-buy-footer">
+          <div class="total-display">
+            <span>Total</span>
+            <strong id="modalTotalPrice">$38.00</strong>
+          </div>
+          <button class="btn-apple-primary btn-large" onclick="confirmModalAdd()">Add to Bag</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
