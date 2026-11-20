@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA Foods — Pure Essence, Crafted by Nature</title>
+  <meta name="description" content="Minimal, pure, artisan food products sustainably harvested and crafted to perfection.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav-container">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="#" class="logo">AURA<span>FOODS</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Overview</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#standards">Purity</a></li>
+        <li><a href="#about">Story</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#products" class="btn-primary-sm">Shop Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <p class="hero-badge">Next-Generation Organics</p>
+        <h1 class="hero-title">Pure taste.<br><span class="gradient-text">Engineered by Nature.</span></h1>
+        <p class="hero-subtitle">Single-origin, cold-extracted artisan essentials. Zero compromise on flavor, nutrient density, or sustainability.</p>
+        
+        <div class="hero-cta-group">
+          <a href="#products" class="btn-primary">Explore Collection</a>
+          <a href="#standards" class="btn-secondary">The Purity Standard <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <div class="hero-device-wrapper">
+          <div class="product-spotlight-card">
+            <div class="spotlight-image-placeholder">
+              <div class="glow-orb"></div>
+              <div class="spotlight-badge">Harvest 2026 • Limited Reserve</div>
+              <div class="food-icon-large">🫒</div>
+              <h3 class="spotlight-name">Reserve Cold-Pressed Extra Virgin Olive Oil</h3>
+              <p class="spotlight-origin">Peloponnese, Greece &bull; 0.18% Acidity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics / Specs (Apple style stats) -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Certified Organic</div>
+          <div class="stat-desc">Zero synthetic pesticides, fertilizers, or additives.</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">&lt; 4 hrs</div>
+          <div class="stat-label">Harvest-to-Press</div>
+          <div class="stat-desc">Locks in optimal polyphenol count and aroma.</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0.0g</div>
+          <div class="stat-label">Refined Sugar</div>
+          <div class="stat-desc">Pure unadulterated whole-food goodness.</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Net Zero</div>
+          <div class="stat-label">Carbon Footprint</div>
+          <div class="stat-desc">Regenerative agriculture and biodegradable packaging.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Product Showcase -->
+    <section id="products" class="bento-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">The Collection</p>
+          <h2 class="section-title">Designed for the purist palate.</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1: Wild Alpine Honey (Large) -->
+          <div class="bento-card bento-span-2 card-honey">
+            <div class="card-content">
+              <span class="card-tag">Raw &bull; Unfiltered</span>
+              <h3 class="card-title">Wild Alpine Flora Honey</h3>
+              <p class="card-desc">Sourced from high-altitude Swiss wildflowers. Cold-extracted to retain active bee enzymes and pollen nutrients.</p>
+              <div class="card-bottom">
+                <span class="card-price">$28</span>
+                <button class="btn-buy" onclick="addToCart('Wild Alpine Flora Honey')">Order Now</button>
+              </div>
+            </div>
+            <div class="card-visual">
+              <span class="bento-icon">🍯</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Ceremonial Matcha -->
+          <div class="bento-card card-matcha">
+            <div class="card-content">
+              <span class="card-tag">Uji, Japan</span>
+              <h3 class="card-title">Single-Estate Ceremonial Matcha</h3>
+              <p class="card-desc">First harvest, stone-ground tencha leaves for serene focus.</p>
+              <div class="card-bottom">
+                <span class="card-price">$34</span>
+                <button class="btn-buy" onclick="addToCart('Ceremonial Matcha')">Order Now</button>
+              </div>
+            </div>
+            <div class="card-visual">
+              <span class="bento-icon">🍵</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Ancient Grains -->
+          <div class="bento-card card-grains">
+            <div class="card-content">
+              <span class="card-tag">Heritage Sourdough Flour</span>
+              <h3 class="card-title">Ancient Einkorn Grain</h3>
+              <p class="card-desc">Low gluten index, unmatched nutty taste, stone-milled weekly.</p>
+              <div class="card-bottom">
+                <span class="card-price">$18</span>
+                <button class="btn-buy" onclick="addToCart('Ancient Einkorn Grain')">Order Now</button>
+              </div>
+            </div>
+            <div class="card-visual">
+              <span class="bento-icon">🌾</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Micro-batch Salt (Large) -->
+          <div class="bento-card bento-span-2 card-salt">
+            <div class="card-content">
+              <span class="card-tag">Brittany, France</span>
+              <h3 class="card-title">Solar-Evaporated Flake Salt</h3>
+              <p class="card-desc">Harvested by master paludiers using wooden tools. Naturally rich in magnesium and essential marine minerals.</p>
+              <div class="card-bottom">
+                <span class="card-price">$16</span>
+                <button class="btn-buy" onclick="addToCart('Solar-Evaporated Salt')">Order Now</button>
+              </div>
+            </div>
+            <div class="card-visual">
+              <span class="bento-icon">🧂</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Purity / Standards Section -->
+    <section id="standards" class="standards-section">
+      <div class="container">
+        <div class="standards-box">
+          <div class="standards-text">
+            <p class="eyebrow">The Standard</p>
+            <h2 class="standards-title">No compromises. Ever.</h2>
+            <p class="standards-subtitle">Just like precision engineering, our cultivation and harvesting process leaves no detail unmeasured.</p>
+            
+            <ul class="standards-list">
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div>
+                  <strong>Third-Party Lab Tested</strong>
+                  <p>Every single batch is tested for heavy metals, microplastics, and purity.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div>
+                  <strong>Ultra-Low Oxidation Bottling</strong>
+                  <p>Bottled under nitrogen flush in ultraviolet-blocking dark glass bottles.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div>
+                  <strong>Direct Farmer Fair-Trade</strong>
+                  <p>We work directly with multigenerational independent organic growers.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick CTA banner -->
+    <section class="newsletter-section">
+      <div class="container text-center">
+        <h2 class="newsletter-title">Taste the difference tomorrow.</h2>
+        <p class="newsletter-subtitle">Subscribe to seasonal reserve announcements and receive complimentary express delivery on your first order.</p>
+        <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+          <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="email">
+          <button type="submit" class="btn-primary">Join Reserve</button>
+        </form>
+        <p id="formMsg" class="form-feedback"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <p class="footer-note">1. Batch results and certificates of analysis are publicly accessible via QR codes printed on all bottle bases.</p>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 AURA Foods Inc. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sales Policy</a>
+          <a href="#">Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
